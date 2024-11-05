@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TC Member Information</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="11.jpg" alt="Banner Image" class="banner">
+            <h1>
+Member Information</h1>
+            <p>Tech Cluder</p>
+            <p>Learn - Lead - Live</p>
+        </header>
+
+
+        <form action="https://script.google.com/macros/s/AKfycbxBLEVNUCGojgbGJSok8tauEOAH2okwxUPtjrRb9dAIjVxnpervz_9mdLPR31_0x_wz/exec" method="POST"
+             name="turna-form"
+            >
+          <div class="form-reg">
+            
+         
+            
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="roll">Institute Roll *</label>
+                <input type="number" id="roll" name="roll" placeholder="Enter your roll" required>
+            </div>
+
+            <div class="form-group">
+                <label for="birthday">Date of birth *</label>
+                <input type="date" id="birthday" name="birthday" required>
+            </div>
+
+            <div class="form-group">
+                <label for="number">Contact Number   *</label>
+                <input type="number" id="number" name="number" placeholder="Enter contact number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="Enter your e-mail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="section">Section *</label>
+                <input type="text" id="section" name="section" placeholder="Enter your section" required>
+            </div>
+
+
+
+           
+           </div>
+           
+
+            <a href="sub.html">
+                 <button type="submit" class="submit-btn">Submit</button>
+            </a>
+
+
+
+           
+        </form>
+    </div>
+    <script>
+        const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxBLEVNUCGojgbGJSok8tauEOAH2okwxUPtjrRb9dAIjVxnpervz_9mdLPR31_0x_wz/exec";
+  
+        const form = document.forms["turna-form"];
+  
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          fetch(scriptURL, { method: "POST", body: new FormData(form) })
+            .then((response) =>
+              alert("Thank you! your form is submitted successfully.")
+            )
+            .then(() => {
+              window.location.reload();
+            })
+            .catch((error) => console.error("Error!", error.message));
+        });
+      </script>
+</body>
+</html>
